@@ -1,0 +1,10 @@
+conda activate gesture_env
+conda activate gesture_solver
+python app.py
+
+conda activate gemini_env
+python gemini_server.py
+
+When you want CV again
+
+In PowerShell: $env:ENABLE_CV="1"+
