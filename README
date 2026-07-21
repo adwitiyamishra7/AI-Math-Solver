@@ -1,0 +1,306 @@
+# 🧠 AI Math Solver
+
+An interactive **AI-powered mathematical problem-solving application** that allows users to solve mathematical problems using multiple input methods — drawing with a mouse, real-time hand gestures, image uploads, or typed equations.
+
+The project combines **Computer Vision, Hand Tracking, AI-based visual understanding, and a modern Flask web interface** to create a natural and interactive way of solving mathematical problems.
+
+---
+
+## ✨ Features
+
+### ✏️ Mouse Drawing
+Draw mathematical equations directly on an interactive canvas using your mouse and submit them for AI-powered analysis.
+
+### 🖐️ Hand Gesture Drawing
+Use your webcam and index finger to draw equations in real time.
+
+Hand tracking enables touch-free mathematical input using computer vision.
+
+- Raise the **index finger** to draw
+- Use gestures to control drawing behavior
+- Real-time webcam tracking
+- Live drawing visualization
+
+### 🖼️ Image Upload
+
+Upload images containing mathematical problems, including:
+
+- Handwritten equations
+- Notebook photos
+- Screenshots
+- Printed mathematical questions
+
+The AI analyzes the image and generates a solution.
+
+### ⌨️ Typed Equation Solver
+
+Enter mathematical expressions directly, such as:
+
+```text
+2x + 3 = 7
+15 / 3 + 4
+sqrt(144)
+```
+
+The application processes the equation and displays the result in the solution workspace.
+
+---
+
+## 🤖 AI-Powered Problem Solving
+
+The application integrates **Google Gemini** for multimodal mathematical understanding.
+
+It can analyze visual mathematical input and return:
+
+- Detected mathematical problem
+- Problem classification
+- Step-by-step solution
+- Final result
+
+---
+
+## 🛠️ Tech Stack
+
+### Backend
+
+- Python
+- Flask
+- REST APIs
+- NumPy
+
+### Computer Vision
+
+- OpenCV
+- MediaPipe Hands
+- Real-time webcam processing
+- Hand landmark detection
+- Gesture-based drawing
+
+### AI
+
+- Google Gemini API
+- Multimodal image understanding
+- AI-assisted mathematical reasoning
+
+### Frontend
+
+- HTML5
+- CSS3
+- JavaScript
+- Canvas API
+- Responsive dark UI
+
+### Development Tools
+
+- Git
+- GitHub
+- VS Code
+- Conda
+
+---
+
+## 🏗️ Project Architecture
+
+```text
+AI-Math-Solver/
+│
+├── app.py
+├── gemini_server.py
+├── requirements.txt
+├── .gitignore
+│
+├── templates/
+│   └── index.html
+│
+├── static/
+│   ├── script.js
+│   └── style.css
+│
+└── README.md
+```
+
+`app.py` handles the main Flask application, API routes, application state, drawing logic, and computer-vision pipeline.
+
+`gemini_server.py` handles communication with the Gemini AI service.
+
+The frontend communicates with the backend through API endpoints to provide an interactive solving experience.
+
+---
+
+## 🔄 How It Works
+
+```text
+User Input
+    │
+    ├── Mouse Drawing
+    ├── Hand Gesture
+    ├── Image Upload
+    └── Typed Equation
+            │
+            ▼
+      Flask Backend
+            │
+      ┌─────┴─────┐
+      │           │
+Computer Vision   AI Processing
+OpenCV/MediaPipe  Gemini
+      │           │
+      └─────┬─────┘
+            ▼
+    Problem Detection
+            │
+            ▼
+   Mathematical Solution
+            │
+            ▼
+      Web Interface
+```
+
+---
+
+## 🚀 Running the Project Locally
+
+### 1. Clone the Repository
+
+```bash
+git clone https://github.com/adwitiyamishra7/AI-Math-Solver.git
+```
+
+Move into the project directory:
+
+```bash
+cd AI-Math-Solver
+```
+
+### 2. Create a Python Environment
+
+Using Conda:
+
+```bash
+conda create -n gesture_solver python=3.12
+```
+
+Activate it:
+
+```bash
+conda activate gesture_solver
+```
+
+### 3. Install Dependencies
+
+Once `requirements.txt` is available:
+
+```bash
+pip install -r requirements.txt
+```
+
+### 4. Configure Environment Variables
+
+Create a `.env` file in the project root.
+
+Add the required API configuration:
+
+```env
+GEMINI_API_KEY=your_api_key_here
+```
+
+> Never commit your `.env` file or API keys to GitHub.
+
+### 5. Run the Application
+
+```bash
+python app.py
+```
+
+Open your browser at:
+
+```text
+http://127.0.0.1:5000
+```
+
+---
+
+## 🎮 Input Modes
+
+| Mode | Description |
+|---|---|
+| ✏️ Mouse Draw | Draw mathematical equations directly on the canvas |
+| 🖐️ Hand Gesture | Draw in real time using hand tracking and a webcam |
+| 🖼️ Upload Image | Upload screenshots or photos of mathematical problems |
+| ⌨️ Type Equation | Enter mathematical expressions directly |
+
+---
+
+## 🔐 Security
+
+Sensitive information such as API keys is stored using environment variables.
+
+The following files/directories should remain excluded from Git:
+
+```text
+.env
+.venv/
+venv/
+__pycache__/
+*.pyc
+*.log
+```
+
+Never expose API keys directly inside source code.
+
+---
+
+## 🌐 Deployment
+
+Deployment support is planned using **Hugging Face Spaces**.
+
+> **Note:** The local hand-gesture implementation uses webcam access and may require browser-side camera handling when deployed to a remote server. Server-side `cv2.VideoCapture(0)` cannot directly access a visitor's webcam.
+
+The deployed architecture will therefore require special handling for the real-time gesture feature.
+
+---
+
+## 🔮 Future Improvements
+
+- Browser-based webcam processing for cloud deployment
+- Improved mathematical OCR
+- Support for more complex equations
+- Graph plotting and visualization
+- Mathematical history/session tracking
+- Improved gesture recognition
+- Faster AI inference
+- Expanded symbolic mathematics support
+
+---
+
+## 📸 Screenshots
+
+Application screenshots and demo GIFs will be added here.
+
+<!--
+Example:
+
+![AI Math Solver](assets/demo.png)
+-->
+
+---
+
+## 👨‍💻 Author
+
+**Adwitiya Mishra**
+
+B.Tech Computer Science — Artificial Intelligence & Machine Learning
+
+GitHub: `adwitiyamishra7`
+
+---
+
+## ⭐ Support
+
+If you find this project useful or interesting, consider giving the repository a **star ⭐**.
+
+---
+
+<p align="center">
+  <b>Built by Adwitiya Mishra</b>
+</p>
